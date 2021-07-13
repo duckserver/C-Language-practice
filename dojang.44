@@ -6,7 +6,7 @@ int main()
 {
     int cnt = 0;
     char s1[1000];
-    scanf("%[^\n]s", &s1);
+    scanf("%[^\n]s", s1);
 
     char* ptr = strchr(s1, ' ');
 
