@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int cnt = 0;
+    char the[1001];
+    scanf("%[^\n]s", the); //User input the sentence and save it in array   
+
+    char* tok = strtok(the, " .,"); //cut the sentence by "., " 
+    while(tok != NULL)
+    {
+        if (strcmp(tok, "the") == 0 && tok != NULL) // if the word is "the" and it is not NULL plus count
+        {
+            cnt++;
+        }
+        tok = strtok(NULL, " .,"); // repeat it before sentence end
+    }
+    printf("%d", cnt);
+    return 0;
+}
