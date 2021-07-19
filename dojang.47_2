@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char gram[11];
+    int count;
+    int i = 0;
+    scanf("%d %s", &count, gram); // input the size of 'N' and string
+
+    int length = strlen(gram);
+    if (length < count) // if the length of 'gram' is shorter than 'count' print wrong and exit
+    {
+        printf("wrong");
+    }
+    else
+    {
+        while (i < length - (count - 1)) // repeat the loop before get out of 
+        {
+            for (int j = 0; j < count; j++) // print the character as 'count'
+            {
+                printf("%c", gram[i + j]);
+            }
+            printf("\n");
+            i++;
+        }
+    }
+    return 0;
+}
