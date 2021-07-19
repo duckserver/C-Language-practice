@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main()
+{
+    char word[31];
+    bool answer = true;
+    
+    scanf("%[^\n]s", word); // insert sentence into array 'word' include blank
+    
+    int length = strlen(word);
+    int begin = 0;
+    int end = length - 1;
+    while (begin < end) // array can include blank, so divide 'length' into 2 can be wrong
+    {
+        while (word[begin] == ' ') // while 'word[begin]' is blank, pass the blank  
+            begin++;
+        while (word[end] == ' ')
+            end--;
+        if (word[begin] != word[end]) // if it isn't palindrome, change 'answer' false and finish the loop
+        {
+            answer = false;
+            break;
+        }
+        begin++; // if 'word[begin]' and 'word[end]' same, examine next letter 
+        end--;
+    }
+    printf("%d", answer);
+    return 0;
+}
