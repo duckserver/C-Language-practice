@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+struct numstruct{
+  char num1;
+  int num2;
+};
+
+int main()
+{
+  struct numstruct header;
+  
+  printf("%d", sizeof(header));
+  return 0;
+}
