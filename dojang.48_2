@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+#pragma pack(push, 1)
+struct numstruct{
+  char num1;
+  int num2;
+};
+#pragma pack(pop)
+
+int main()
+{
+  struct numstruct header;
+  
+  printf("%d", sizeof(header));
+  return 0;
+}
